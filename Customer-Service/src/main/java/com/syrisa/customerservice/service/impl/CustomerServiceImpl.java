@@ -19,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService<Customer> {
     @PostConstruct
     public void createCustomer() {
         customers.add(new Customer(Customer.count.getAndIncrement(), "John", "Carter", "+9012345678911", "john.ca@example.com"));
-        customers.add(new Customer(Customer.count.getAndIncrement(), "Tom", "Clark", "+9012345678912", "clarl.tom@example.com"));
+        customers.add(new Customer(Customer.count.getAndIncrement(), "Tom", "Clark", "+9012345678912", "clark.tom@example.com"));
         customers.add(new Customer(Customer.count.getAndIncrement(), "Terry", "Johnson", "+9012345678913", "terry.john7@example.com"));
         customers.add(new Customer(Customer.count.getAndIncrement(), "Sarra", "Tancredi", "+9012345678914", "tanc.sarr05@example.com"));
         customers.forEach(this::create);

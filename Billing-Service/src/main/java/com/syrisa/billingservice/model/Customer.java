@@ -2,7 +2,6 @@ package com.syrisa.billingservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.concurrent.atomic.AtomicInteger;
