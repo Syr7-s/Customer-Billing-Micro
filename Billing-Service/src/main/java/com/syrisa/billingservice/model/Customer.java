@@ -1,7 +1,8 @@
-package com.syrisa.customerservice.model;
+package com.syrisa.billingservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,14 +11,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Setter
 @AllArgsConstructor
 public class Customer {
-    public static final AtomicInteger count = new AtomicInteger(0);
+    private static final AtomicInteger count = new AtomicInteger(0);
     private int id;
     private String firstName;
     private String lastName;
     private String phone;
     private String email;
 
-    public Customer(){
-        this.id = count.getAndIncrement();
-    }
+    public Customer() {this.id = count.getAndIncrement();}
 }
