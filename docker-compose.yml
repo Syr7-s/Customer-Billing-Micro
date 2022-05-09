@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  customer-service:
+    build: ./Customer-Service
+    #image: syr7s/customer-service:v1
+    ports:
+      - "8090:8090"
+    networks:
+      - micro-service
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:8090/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  billing-service:
+    build: ./Billing-Service
+    depends_on:
+      - customer-service
+    #image: syr7s/billing-service:v2
+    ports:
+      - "8085:8085"
+    networks:
+      - micro-service
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:8085/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+networks:
+  micro-service:
+    driver: bridge
