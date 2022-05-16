@@ -16,7 +16,7 @@ services:
   billing-service:
     depends_on:
       - customer-service:v1
-    image: syr7s/billing-service:v2
+    image: syr7s/billing-service:v1
     deploy:
       replicas: 3
       update_config:
