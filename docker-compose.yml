@@ -3,6 +3,7 @@ services:
   customer-service:
     build: ./Customer-Service
     #image: syr7s/customer-service:v1
+    hostname: customer
     ports:
       - "8090:8090"
     networks:
@@ -16,6 +17,7 @@ services:
 
   billing-service:
     build: ./Billing-Service
+    hostname: billing
     depends_on:
       - customer-service
     #image: syr7s/billing-service:v2

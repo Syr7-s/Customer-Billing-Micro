@@ -2,6 +2,7 @@ version: "3.8"
 services:
   customer-service:
     image: syr7s/customer-service:v1
+    hostname: customer
     deploy:
       replicas: 3
       update_config:
@@ -12,17 +13,12 @@ services:
       - "8090:8090"
     networks:
       - micro-service
-    healthcheck:
-      test: [ "CMD","curl","-f","http://localhost:8090/actuator/health" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 15s
 
   billing-service:
     depends_on:
       - customer-service:v1
     image: syr7s/billing-service:v1
+    hostname: billing
     deploy:
       replicas: 3
       update_config:
@@ -33,12 +29,6 @@ services:
       - "8085:8085"
     networks:
       - micro-service
-    healthcheck:
-      test: [ "CMD","curl","-f","http://localhost:8090/actuator/health" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 15s
 
 networks:
   micro-service:
