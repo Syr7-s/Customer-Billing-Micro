@@ -23,10 +23,10 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.create(customer), HttpStatus.OK);
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@RequestBody Customer customer,@PathVariable("id") int id) {
+    @PutMapping("/update/{customerID}")
+    public ResponseEntity<?> update(@RequestBody Customer customer,@PathVariable("customerID") Long customerID) {
         try {
-            return new ResponseEntity<>(customerService.update(customer,id), HttpStatus.OK);
+            return new ResponseEntity<>(customerService.update(customer,customerID), HttpStatus.OK);
         }catch (Exception exception){
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
         }
@@ -37,15 +37,15 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.getAllCustomer(), HttpStatus.OK);
     }
 
-    @GetMapping("/customer/{id}")
-    public ResponseEntity<?> getCustomerByID(@PathVariable("id") int id){
-        return new ResponseEntity<>(customerService.getByCustomer(id), HttpStatus.OK);
+    @GetMapping("/customer/{customerID}")
+    public ResponseEntity<?> getCustomerByID(@PathVariable("customerID") Long customerID){
+        return new ResponseEntity<>(customerService.getByCustomer(customerID), HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") int id){
+    @DeleteMapping("/delete/{customerID}")
+    public ResponseEntity<?> delete(@PathVariable("customerID") Long customerID){
         try {
-            return new ResponseEntity<>(customerService.delete(id), HttpStatus.OK);
+            return new ResponseEntity<>(customerService.delete(customerID), HttpStatus.OK);
         }catch (Exception exception){
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
         }

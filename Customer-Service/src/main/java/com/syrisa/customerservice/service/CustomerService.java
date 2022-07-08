@@ -4,15 +4,15 @@ import java.util.List;
 
 public interface CustomerService<T> {
 
-    void createCustomer();
+   // void createCustomer();
 
     T create(T create);
 
-    T update(T update, int id) throws Exception;
+    T update(T update, Long id) throws Exception;
 
     List<T> getAllCustomer();
 
-    T getByCustomer(int id);
+    T getByCustomer(Long id);
 
-    String delete(int id) throws Exception;
+    String delete(Long id) throws Exception;
 }

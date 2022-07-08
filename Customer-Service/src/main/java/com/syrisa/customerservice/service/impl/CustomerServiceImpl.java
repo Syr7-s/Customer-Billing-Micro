@@ -12,9 +12,9 @@ import java.util.Map;
 
 @Service
 public class CustomerServiceImpl implements CustomerService<Customer> {
-    private static final Map<Integer, Customer> customerRepo = new HashMap<>();
+    private static final Map<Long, Customer> customerRepo = new HashMap<>();
     private static final List<Customer> customers = new ArrayList<>();
-
+/*
     @Override
     @PostConstruct
     public void createCustomer() {
@@ -24,18 +24,18 @@ public class CustomerServiceImpl implements CustomerService<Customer> {
         customers.add(new Customer(Customer.count.getAndIncrement(), "Sarra", "Tancredi", "+9012345678914", "tanc.sarr05@example.com"));
         customers.forEach(this::create);
     }
-
+*/
     @Override
     public Customer create(Customer customer) {
-        if (!customerRepo.containsKey(customer.getId())) {
-            customerRepo.put(customer.getId(), customer);
+        if (!customerRepo.containsKey(customer.getCustomerId())) {
+            customerRepo.put(customer.getCustomerId(), customer);
         }
-        return customerRepo.get(customer.getId());
+        return customerRepo.get(customer.getCustomerId());
     }
 
     @Override
-    public Customer update(Customer update, int id) throws Exception {
-        if (update.getId() == id) {
+    public Customer update(Customer update, Long id) throws Exception {
+        if (update.getCustomerId() == id) {
             customerRepo.put(id, update);
             return customerRepo.get(id);
         }
@@ -48,12 +48,12 @@ public class CustomerServiceImpl implements CustomerService<Customer> {
     }
 
     @Override
-    public Customer getByCustomer(int id) {
+    public Customer getByCustomer(Long id) {
         return customerRepo.get(id);
     }
 
     @Override
-    public String delete(int id) throws Exception {
+    public String delete(Long id) throws Exception {
         if (customerRepo.containsKey(id)) {
             customerRepo.remove(id);
             return id + " numbered Customer was deleted";

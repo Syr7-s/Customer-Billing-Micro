@@ -2,10 +2,14 @@ package com.syrisa.customerservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import javax.persistence.*;
 
+import java.math.BigDecimal;
+import java.util.concurrent.atomic.AtomicInteger;
+/*
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,4 +24,28 @@ public class Customer {
     public Customer(){
         this.id = count.getAndIncrement();
     }
+}
+*/
+
+@Entity
+@Table(name = "ROOM")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CUSTOMER_ID")
+    private Long customerId;
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+    @Column(name = "LAST_NAME")
+    private String lastName;
+    @Column(name = "PHONE")
+    private String phone;
+    @Column(name = "EMAIL")
+    private String email;
+
 }
