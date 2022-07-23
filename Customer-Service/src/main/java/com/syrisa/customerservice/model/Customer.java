@@ -28,7 +28,7 @@ public class Customer {
 */
 
 @Entity
-@Table(name = "ROOM")
+@Table(name = "CUSTOMER")
 @Getter
 @Setter
 @NoArgsConstructor

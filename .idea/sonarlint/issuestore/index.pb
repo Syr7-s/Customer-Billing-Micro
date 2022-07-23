@@ -17,17 +17,5 @@ J
 Billing-Service/Dockerfile,9\9\997fa1e126d3368262b7d8f13bfd988db05ac1ff
 H
 Customer-Service/pom.xml,6\1\610270d1fca0430ddb5e360c44faa7109891148f
-}
-MCustomer-Service/src/main/java/com/syrisa/customerservice/model/Customer.java,b\8\b8ebdcef7968bf124829c4580d877108863b8fe0
-å
-\Customer-Service/src/main/java/com/syrisa/customerservice/controller/CustomerController.java,0\d\0d42510806d71ee5641ac9cf23dd5384d705db93
-è
-_Customer-Service/src/main/java/com/syrisa/customerservice/service/impl/CustomerServiceImpl.java,2\8\289d7d17811fa984ecff604fb6c720ec4d9e34f3
 Ü
 VCustomer-Service/src/main/java/com/syrisa/customerservice/service/CustomerService.java,3\3\33afeb64fd0ff0fba42ecbd36cc513eacccbddb6
-z
-JBilling-Service/src/main/java/com/syrisa/billingservice/model/Billing.java,d\5\d5ab766ccaecf9b15440afbaadc1e154e2172b40
-{
-KBilling-Service/src/main/java/com/syrisa/billingservice/model/Customer.java,8\6\86583970d60aa59d1f2d4034b9404f27274c0da0
-â
-YBilling-Service/src/main/java/com/syrisa/billingservice/controller/BillingController.java,2\3\230e09c8bad0dbda601f842d886ba4bd1fbc29b8
