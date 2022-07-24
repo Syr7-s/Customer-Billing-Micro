@@ -49,7 +49,7 @@ public class BillingController {
     }
 
     @GetMapping("/customer/{billingID}")
-    public ResponseEntity<?> getCustomerByID(@PathVariable("customerID") Long customerID){
+    public ResponseEntity<?> getCustomerByID(@PathVariable("billingID") Long customerID){
         return new ResponseEntity<>(billingService.getByBilling(customerID), HttpStatus.OK);
     }
 

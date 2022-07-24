@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -35,6 +36,8 @@ public class BillingServiceImpl implements BillingService<Billing> {
 
     @Override
     public List<Billing> createBilling() {
+        Pageable wholePage = Pageable.unpaged();
+        billings = getAllBilling(wholePage).stream().collect(Collectors.toList());
         try {
             billings.forEach(billing -> {
                 Customer customer = restTemplate.getForObject(CUSTOMER_SERVICE_URL + "customer/" + billing.getCustomerId(), Customer.class);
@@ -67,7 +70,7 @@ public class BillingServiceImpl implements BillingService<Billing> {
     }
 
     private Billing updateBilling(Billing billing) {
-        Customer customer = restTemplate.getForObject(CUSTOMER_SERVICE_URL +"update/"+ billing.getCustomerId(), Customer.class);
+        Customer customer = restTemplate.getForObject(CUSTOMER_SERVICE_URL + "update/" + billing.getCustomerId(), Customer.class);
         billing.setCustomerFullName(customer.getFirstName() + " " + customer.getLastName());
         return billing;
     }

@@ -34,7 +34,7 @@ public class Billing {
     @Column(name = "PAYMENT_DATE")
     private String paymentDate;
     @Column(name = "CUSTOMER_ID")
-    private String customerId;
+    private Long customerId;
     @Column(name = "CUSTOMER_FULL_NAME")
     private String customerFullName;
 
