@@ -3,5 +3,5 @@ CREATE TABLE CUSTOMER (
                       FIRST_NAME VARCHAR(128) NOT NULL,
                       LAST_NAME VARCHAR(128) NOT NULL,
                       PHONE VARCHAR(128) NOT NULL,
-                      EMAIL VARCHAR(128) NOT NULL,
+                      EMAIL VARCHAR(128) NOT NULL
 );

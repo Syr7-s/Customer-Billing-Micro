@@ -3,14 +3,8 @@ H
 Customer-Service/HELP.md,5\a\5a02cb9606007156ecc09eab004f9960c627847d
 †
 VBilling-Service/src/main/java/com/syrisa/billingservice/BillingServiceApplication.java,e\6\e6eb73884eee732ca8c4b02cfaf0496f9df6a50b
-ƒ
-SBilling-Service/src/main/java/com/syrisa/billingservice/service/BillingService.java,5\c\5ce97648b79885815f118bb40e3922d60f520591
 Ž
 ^Customer-Service/src/test/java/com/syrisa/customerservice/CustomerServiceApplicationTests.java,7\6\767ac4bac78a6c48519008b1587f7bca775b691c
-Œ
-\Billing-Service/src/main/java/com/syrisa/billingservice/service/impl/BillingServiceImpl.java,e\4\e49a94f49b7cafa4ed127032eca0d11959813e09
-G
-Billing-Service/pom.xml,8\6\86f4f54621e348eb6bfc456e95ac35431b1cb1ec
 K
 Customer-Service/Dockerfile,8\7\87a2d354433b9feef852913bdcb71ca81f487303
 J
