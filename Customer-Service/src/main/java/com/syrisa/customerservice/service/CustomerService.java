@@ -1,5 +1,7 @@
 package com.syrisa.customerservice.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface CustomerService<T> {
@@ -10,7 +12,9 @@ public interface CustomerService<T> {
 
     T update(T update, Long id) throws Exception;
 
-    List<T> getAllCustomer();
+   // List<T> getAllCustomer();
+
+    Page<T> getAllCustomer(Pageable pageable);
 
     T getByCustomer(Long id);
 

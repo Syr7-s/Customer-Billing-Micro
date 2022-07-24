@@ -3,9 +3,13 @@ package com.syrisa.customerservice.controller;
 import com.syrisa.customerservice.model.Customer;
 import com.syrisa.customerservice.service.CustomerService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.constraints.Min;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/customer")
@@ -31,10 +35,11 @@ public class CustomerController {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
-
-    @GetMapping("/all")
-    public ResponseEntity<?> getAll(){
-        return new ResponseEntity<>(customerService.getAllCustomer(), HttpStatus.OK);
+    @GetMapping(value = "/all", params = {"page", "size"})
+    public ResponseEntity<?> getAll(@Min(0) int page, @Min(1) int size){
+        return new ResponseEntity<>(customerService.getAllCustomer(PageRequest.of(page, size))
+                .stream()
+                .collect(Collectors.toList()), HttpStatus.OK);
     }
 
     @GetMapping("/customer/{customerID}")

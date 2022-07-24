@@ -15,7 +15,3 @@ K
 Customer-Service/Dockerfile,8\7\87a2d354433b9feef852913bdcb71ca81f487303
 J
 Billing-Service/Dockerfile,9\9\997fa1e126d3368262b7d8f13bfd988db05ac1ff
-H
-Customer-Service/pom.xml,6\1\610270d1fca0430ddb5e360c44faa7109891148f
-†
-VCustomer-Service/src/main/java/com/syrisa/customerservice/service/CustomerService.java,3\3\33afeb64fd0ff0fba42ecbd36cc513eacccbddb6
